@@ -5,6 +5,9 @@ const nextConfig = {
       fullUrl: true,
     },
   },
+  experimental: {
+    serverComponentsExternalPackages: ["oslo"],
+  },
 };
 
 export default nextConfig;

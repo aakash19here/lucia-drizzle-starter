@@ -1,12 +1,15 @@
-import { sql } from "drizzle-orm";
-import { text, integer, sqliteTable } from "drizzle-orm/sqlite-core";
+import { text, integer, sqliteTable, int } from "drizzle-orm/sqlite-core";
 
-export const users = sqliteTable("users", {
-  id: text("id"),
-  textModifiers: text("text_modifiers")
+export const user = sqliteTable("user", {
+  id: text("id").notNull().primaryKey(),
+  githubId: int("github_id").notNull().unique(),
+  username: text("username").notNull(),
+});
+
+export const session = sqliteTable("session", {
+  id: text("id").notNull().primaryKey(),
+  userId: text("user_id")
     .notNull()
-    .default(sql`CURRENT_TIMESTAMP`),
-  intModifiers: integer("int_modifiers", { mode: "boolean" })
-    .notNull()
-    .default(false),
+    .references(() => user.id),
+  expiresAt: integer("expires_at").notNull(),
 });
