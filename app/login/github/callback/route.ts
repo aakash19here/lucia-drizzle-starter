@@ -3,7 +3,7 @@ import { OAuth2RequestError } from "arctic";
 import { generateId } from "lucia";
 import { github, lucia } from "@/lib/auth/lucia";
 import { db } from "@/lib/db";
-import { user } from "@/lib/db/schema/todo";
+import { user } from "@/lib/db/schema/users";
 import { eq } from "drizzle-orm";
 import { redirect } from "next/navigation";
 
@@ -68,7 +68,12 @@ export async function GET(request: Request): Promise<Response> {
       sessionCookie.value,
       sessionCookie.attributes
     );
-    return redirect("/");
+    return new Response(null, {
+      status: 302,
+      headers: {
+        Location: "/",
+      },
+    });
   } catch (e) {
     // the specific error message depends on the provider
     console.log(e);
