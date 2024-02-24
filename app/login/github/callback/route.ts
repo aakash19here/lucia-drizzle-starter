@@ -5,7 +5,6 @@ import { github, lucia } from "@/lib/auth/lucia";
 import { db } from "@/lib/db";
 import { user } from "@/lib/db/schema/users";
 import { eq } from "drizzle-orm";
-import { redirect } from "next/navigation";
 
 export async function GET(request: Request): Promise<Response> {
   const url = new URL(request.url);
