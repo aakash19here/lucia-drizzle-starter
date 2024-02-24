@@ -5,22 +5,8 @@
     {
       "idx": 0,
       "version": "5",
-      "when": 1708616950198,
-      "tag": "0000_lumpy_fixer",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "5",
-      "when": 1708675034923,
-      "tag": "0001_loud_luckman",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "5",
-      "when": 1708675841446,
-      "tag": "0002_simple_scarlet_spider",
+      "when": 1708756150208,
+      "tag": "0000_early_wonder_man",
       "breakpoints": true
     }
   ]
