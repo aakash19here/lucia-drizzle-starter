@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "db:generate": "drizzle-kit generate:sqlite",
-    "db:migrate": "tsx lib/db/migrate.ts"
+    "db:migrate": "tsx lib/db/migrate.ts",
+    "db:studio": "drizzle-kit studio",
+    "db:drop": "drizzle-kit drop"
   },
   "dependencies": {
     "@libsql/client": "^0.5.1",
